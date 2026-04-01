@@ -8,9 +8,17 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
+      background: linear-gradient(270deg, #0f172a, #020617, #0f172a);
+      background-size: 600% 600%;
+      animation: bgMove 10s ease infinite;
       color: white;
       text-align: center;
+    }
+
+    @keyframes bgMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     header {
@@ -18,15 +26,33 @@
       padding: 20px;
       font-size: 24px;
       font-weight: bold;
+      animation: fadeDown 1s ease;
+    }
+
+    @keyframes fadeDown {
+      from {opacity: 0; transform: translateY(-20px);} 
+      to {opacity: 1; transform: translateY(0);} 
     }
 
     .hero {
       padding: 60px 20px;
+      animation: fadeUp 1.5s ease;
+    }
+
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(40px);} 
+      to {opacity: 1; transform: translateY(0);} 
     }
 
     .hero h1 {
       font-size: 40px;
       margin-bottom: 10px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {text-shadow: 0 0 5px #22c55e;} 
+      to {text-shadow: 0 0 20px #22c55e;} 
     }
 
     .hero p {
@@ -43,6 +69,12 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #22c55e;
     }
 
     .features {
@@ -55,6 +87,13 @@
       padding: 20px;
       border-radius: 12px;
       max-width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeUp 1s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
 
     footer {
@@ -63,6 +102,7 @@
       margin-top: 30px;
       font-size: 14px;
       opacity: 0.7;
+      animation: fadeUp 2s ease;
     }
   </style>
 </head>
@@ -96,7 +136,7 @@
 </section>
 
 <footer>
-  Made by YOU 😎 | Free Website
+  Made by YOU 😎 | Animated Website
 </footer>
 
 </body>
